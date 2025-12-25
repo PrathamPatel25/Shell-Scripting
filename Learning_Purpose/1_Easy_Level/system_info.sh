@@ -5,29 +5,29 @@ echo "        SYSTEM INFORMATION"
 echo "======================================"
 
 # Current User
-echo "👤 Current User       : $(whoami)"
+echo "Current User       : $(whoami)"
 
 # Operating System
-echo "🖥️  Operating System  : $(uname -o)"
+echo "Operating System  : $(uname -o)"
 
 # Kernel Version
-echo "⚙️  Kernel Version    : $(uname -r)"
+echo "Kernel Version    : $(uname -r)"
 
 echo "--------------------------------------"
 
 # Disk Usage
-echo "💾 Disk Usage:"
+echo "Disk Usage:"
 df -h --total | grep -E "Filesystem|total"
 
 echo "--------------------------------------"
 
 # Memory Usage
-echo "🧠 Memory Usage:"
+echo "Memory Usage:"
 free -h
 
 echo "--------------------------------------"
 
 # System Uptime
-echo "⏱️  System Uptime     : $(uptime -p)"
+echo "System Uptime     : $(uptime -p)"
 
 echo "======================================"

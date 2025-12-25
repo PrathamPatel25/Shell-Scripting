@@ -2,7 +2,7 @@
 
 # Check for root privileges
 if [ "$EUID" -ne 0 ]; then
-    echo "❌ Please run this script as root or using sudo."
+    echo "Please run this script as root or using sudo."
     exit 1
 fi
 
@@ -22,31 +22,31 @@ while true; do
         1)
             read -p "Enter username to create: " username
             if id "$username" &>/dev/null; then
-                echo "⚠️ User already exists."
+                echo "User already exists."
             else
                 useradd "$username"
-                echo "✅ User '$username' created successfully."
+                echo "User '$username' created successfully."
             fi
             ;;
         2)
             read -p "Enter username to delete: " username
             if id "$username" &>/dev/null; then
                 userdel "$username"
-                echo "✅ User '$username' deleted successfully."
+                echo "User '$username' deleted successfully."
             else
-                echo "❌ User does not exist."
+                echo "User does not exist."
             fi
             ;;
         3)
-            echo "📋 List of system users:"
+            echo "List of system users:"
             cut -d: -f1 /etc/passwd
             ;;
         4)
-            echo "👋 Exiting User Management Script."
+            echo "Exiting User Management Script."
             exit 0
             ;;
         *)
-            echo "❌ Invalid choice. Please try again."
+            echo "Invalid choice. Please try again."
             ;;
     esac
 

@@ -8,9 +8,9 @@ USAGE=$(df / | tail -1 | awk '{print $5}' | sed 's/%//')
 
 # Check if usage exceeds threshold
 if [ "$USAGE" -ge "$THRESHOLD" ]; then
-    echo "⚠️ ALERT: Disk usage is at ${USAGE}% (Threshold: ${THRESHOLD}%)"
+    echo "ALERT: Disk usage is at ${USAGE}% (Threshold: ${THRESHOLD}%)"
 else
-    echo "✅ Disk usage is normal: ${USAGE}%"
+    echo "Disk usage is normal: ${USAGE}%"
 fi
 
 # crontab -e
